@@ -1,0 +1,8 @@
+These work well with very small arrays:
+{
+Insertion sort= n^2 most of the time, however it highly excels when data is coming in one at a time and needs to be 'inserted'.
+
+Selection sort= fails nearly all the time in time complexity; o(n^2); must re-sort all data.
+
+Bubble sort= n^2 most of the time, it excels when data is nearly sorted. not as good as insertion sort.
+}
