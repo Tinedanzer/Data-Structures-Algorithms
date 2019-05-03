@@ -1,3 +1,6 @@
+// time complexity= (nk)
+// space complexity= (n+k)
+
 // grabs a digit(number) from a larger number, by dividing away the 0s using 10^place, then dividing by 10 to
 // get the remainder of the 'ones' digit
 function getNumber(num,place){
@@ -21,6 +24,7 @@ function mostDigits(arr){
 function finalFunction(arr){
     let count=mostDigits(arr);
     for (let i = 0; i < count; i++) {
+        // create an empty array digitbucket length of 10(0-9 digits)
         let digitBuckets= Array.from({length:10}, ()=>[]);
         for (let k = 0; k < arr.length; k++) {
             let digit=getNumber(arr[k],i)
@@ -28,6 +32,7 @@ function finalFunction(arr){
             // console.log(digitBuckets);
         }
         console.log(digitBuckets);
+        // after all digits are split up to appropriate array, concat brings them back in to be split up again.
         arr = [].concat(...digitBuckets);
         console.log(arr);
     }

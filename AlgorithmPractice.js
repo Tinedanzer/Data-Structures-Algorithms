@@ -1,5 +1,4 @@
 function sameFrequency(a,b){
-    let aroo3= 1123;
     // console.log(`${aroo3}`.length);
     let a2=Number(a).toString();
     let b2=Number(b).toString();

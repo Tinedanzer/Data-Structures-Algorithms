@@ -1,3 +1,5 @@
+// time complexity = average: (nlogn); worst: (n^2)
+// space complexity= (logn)
 function quickIndx(arr, start=0, end= arr.length-1){
     let countSwapIndx=start;
     let pivotIndx=start;

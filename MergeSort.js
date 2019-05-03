@@ -1,3 +1,7 @@
+// time complexity: (nlogn)  ----one of the better options in general cases for sorting.
+// space complexity: (n)
+
+// compares each sorted array and combines sorted, starting with 1 element in each array.
 function merge(arr1,arr2){
     let results=[];
     let i=0;
