@@ -24,7 +24,7 @@ class SinglyLinkedList{
     }
 // bam, first try; just rearranged data nodes, and deleted one; good game
     pop(){
-        if(!this.head) return undefined;
+        if(!this.head) return 'empty array';
         let current=this.head;
         while(current){
             if(this.length===1){
