@@ -24,8 +24,17 @@ class SinglyLinkedList{
     }
 // bam, first try; just rearranged data nodes, and deleted one; good game
     pop(){
+        if(!this.head) return undefined;
         let current=this.head;
         while(current){
+            if(this.length===1){
+                let byebye= this.head;
+                this.head=null;
+                this.tail=null;
+                this.length--;
+                console.log(byebye);
+                return byebye;
+            }
             if(current.next.next===null){
                 let byebye=current.next;
                 current.next=null;
@@ -42,8 +51,8 @@ let newList = new SinglyLinkedList();
 newList.push('Aro2o');
 newList.push('aroo2');
 newList.push('aroo3sdfdf');
-newList.push('aroo5');
+// newList.push('aroo5');
 newList.pop();
 newList.pop();
-// console.log(newList.head);
+console.log(newList);
 // console.log(newList.head.next.next.next);
