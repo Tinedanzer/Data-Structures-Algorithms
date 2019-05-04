@@ -1,3 +1,4 @@
+// "GET" takes an index(number) and returns the item in that position.
 class Node{
     constructor(val){
         this.value=val;
@@ -22,28 +23,24 @@ class SinglyLinkedList{
         // console.log(this);
         return this;
     }
-    unshift(val){
-        let newNode = new Node(val);
-        if(!this.head){
-            this.head=newNode;
-            this.tail=newNode;
+// "GET" takes an index(number) and returns the item in that position.
+// assigning current to progress to the .next value after each 'for' loop completion
+    get(i){
+        if(i<0 || i>=this.length)return undefined;
+        let current=this.head
+        for (let x=0;x<this.length;x++){
+            if(i===x) {
+                console.log(current.value);
+                return current.value;}
+            current=current.next;            
         }
-// filling in the value of newNode.next before assign it to this.head****
-// also checking to see if the array is longer than 1; otherwise we dont want to set
-// a circular loop for the .next object. (next would refer to itself if it's the first unshifted)
-        if(this.length>1){
-            newNode.next= this.head;
-            this.head= newNode;
-        }
-        this.length++;
-        return this;
     }
 }
 let newList = new SinglyLinkedList();
 newList.push('Aro1o');
 newList.push('aroo2');
 newList.push('aroo5zz');
-// newList.push('aroo6q');
-newList.unshift('pewpew');
-// newList.push('aroo3sdfdf');
-console.log(newList);
+newList.push('aroo6q');
+newList.push('aroo3sdfdf');
+newList.get(4);
+// console.log(newList);

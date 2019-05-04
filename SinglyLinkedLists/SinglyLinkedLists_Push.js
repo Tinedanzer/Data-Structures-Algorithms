@@ -17,7 +17,7 @@ class SinglyLinkedList{
             this.tail= newNode ;}
         if(this.head===null){
             this.head=newNode;
-            this.tail=this.head;}
+            this.tail=newNode;}
         this.length ++
         console.log(this);
         return this;
