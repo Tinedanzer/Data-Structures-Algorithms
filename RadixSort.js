@@ -1,6 +1,5 @@
 // time complexity= (nk)
 // space complexity= (n+k)
-
 // grabs a digit(number) from a larger number, by dividing away the 0s using 10^place, then dividing by 10 to
 // get the remainder of the 'ones' digit
 function getNumber(num,place){
@@ -23,6 +22,17 @@ function mostDigits(arr){
 }
 function finalFunction(arr){
     let count=mostDigits(arr);
+    // running benchmarking
+    let count2=0;
+    let benchmark=[];
+    let t1 =0;
+    let t2=0;
+    while(count2<100000){
+        if(t1 !==0) {
+            t2=t1;
+        }
+        t1=Date.now()/1000;
+        let avg=t1-t2;
     for (let i = 0; i < count; i++) {
         // create an empty array digitbucket length of 10(0-9 digits)
         let digitBuckets= Array.from({length:10}, ()=>[]);
@@ -31,14 +41,20 @@ function finalFunction(arr){
             digitBuckets[digit].push(arr[k]);
             // console.log(digitBuckets);
         }
-        console.log(digitBuckets);
+        // console.log(digitBuckets);
         // after all digits are split up to appropriate array, concat brings them back in to be split up again.
         arr = [].concat(...digitBuckets);
-        console.log(arr);
+        // console.log(arr);
     }
+    benchmark.push(avg);
+    count2++
+}
+benchmark.shift();
+console.log(benchmark.reduce((a,b) => a + b, 0)/100000)
     return arr;
 }
 // console.log(getNumber(34388271,1));
 // console.log(digitCount(2345));
 // console.log(mostDigits([2341,23,200]));
-finalFunction([2341,23,204,202,785,88,999]);
+console.log(finalFunction([23415,23,204,202,785,88,999]));
+// Array.from({length:100}, ()=>Math.floor(Math.random() * 1000))

@@ -28,3 +28,5 @@ const t2=process.hrtime();
 console.log(t1);
 console.log(t2); 
 console.log(`${(t2[0]-t1[0])+(t2[1]-t1[1])/1000000000} seconds`);
+// could use Date.now() too.
+// t1=Date.now()/1000;

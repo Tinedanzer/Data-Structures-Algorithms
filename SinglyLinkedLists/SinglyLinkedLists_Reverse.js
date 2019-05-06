@@ -1,4 +1,3 @@
-// shift() removes the beginning item of the list and returns the value
 class Node{
     constructor(val){
         this.value=val;
@@ -22,26 +21,11 @@ class SinglyLinkedList{
         this.length ++
         return this;
     }
-    shift(){
-        if(this.length===0) return null;
-        let byeHead= this.head;
-        this.length--;
-        if(this.length===0) {
-            this.head=null;
-            this.tail=null;
-            return byeHead;
-        }
-        this.head=byeHead.next;
-        return byeHead;
+    reverse(){
+
     }
 }
-let newList = new SinglyLinkedList();
 newList.push('Aro1o');
-newList.shift();
 newList.push('aroo2');
 newList.push('aroo3sdfdf');
-newList.shift();
-newList.shift();
-newList.push('aroo5');
-newList.push('aroo6');
-console.log(newList);
+newList.push('aroo4zz');

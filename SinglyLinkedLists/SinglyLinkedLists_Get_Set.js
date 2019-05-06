@@ -14,12 +14,12 @@ class SinglyLinkedList{
     }
     push(val){
         let newNode = new Node(val);
-        if(!this.head){
-            this.head=newNode;
-            this.tail=this.head;}
         if(this.head!==null){
             this.tail.next = newNode;
             this.tail= newNode ;}
+        if(this.head===null){
+            this.head=newNode;
+            this.tail=newNode;}
         this.length ++
         // console.log(this);
         return this;
@@ -31,9 +31,9 @@ class SinglyLinkedList{
         let current=this.head
         for (let x=0;x<this.length;x++){
             if(i===x) {
-                // console.log(current);
                 return current;}
-            current=current.next;            
+            current=current.next;
+            
         }
     }
 // "SET" takes a value and an index; finds the index and replaces the value. Will use the 'GET' method.
@@ -48,10 +48,10 @@ class SinglyLinkedList{
 }
 let newList = new SinglyLinkedList();
 newList.push('Aro1o');
-newList.push('aroo2');
-newList.push('aroo5zz');
-newList.push('aroo6q');
-newList.push('aroo3sdfdf');
-newList.get(4);
-newList.set(433,1);
+// newList.push('aroo2');
+// newList.push('aroo5zz');
+// newList.push('aroo6q');
+// newList.push('aroo3sdfdf');
+// newList.get(4);
+// newList.set(433,2);
 console.log(newList);

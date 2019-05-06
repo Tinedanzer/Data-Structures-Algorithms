@@ -12,14 +12,13 @@ class SinglyLinkedList{
     }
     push(val){
         let newNode = new Node(val);
-        if(!this.head){
-            this.head=newNode;
-            this.tail=this.head;}
         if(this.head!==null){
             this.tail.next = newNode;
             this.tail= newNode ;}
+        if(this.head===null){
+            this.head=newNode;
+            this.tail=newNode;}
         this.length ++
-        // console.log(this);
         return this;
     }
 // bam, first try; just rearranged data nodes, and deleted one; good game
@@ -48,7 +47,7 @@ class SinglyLinkedList{
     }
 }
 let newList = new SinglyLinkedList();
-newList.push('Aro2o');
+newList.push('Aro1o');
 newList.push('aroo2');
 newList.push('aroo3sdfdf');
 // newList.push('aroo5');

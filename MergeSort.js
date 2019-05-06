@@ -25,9 +25,12 @@ function merge(arr1,arr2){
 }
 // recursive breakdown on unsorted array:
 function mergeSort(arr1){
-    if(arr1.length<=1)return arr1;
-    let left=mergeSort(arr1.slice(0,Math.floor(arr1.length/2)));
-    let right=mergeSort(arr1.slice(Math.floor(arr1.length/2)));
+    let aroo=arr1.length;
+    if(aroo<=1)return arr1;
+    let left=mergeSort(arr1.slice(0,Math.floor(aroo/2)));
+    let right=mergeSort(arr1.slice(Math.floor(aroo/2)));
     return merge(left,right);
 }
-console.log(mergeSort([3,2,1,15,51,4,54]))
+// Array.from({length:100}, ()=>Math.floor(Math.random() * 1000))
+console.log(mergeSort([12,95,41,23,5,6,9,947,20]))
+console.log(mergeSort(Array.from({length:100}, ()=>Math.floor(Math.random() * 1000))));

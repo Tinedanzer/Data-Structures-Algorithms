@@ -19,7 +19,6 @@ class SinglyLinkedList{
             this.head=newNode;
             this.tail=newNode;}
         this.length ++
-        console.log(this);
         return this;
     }
 }
