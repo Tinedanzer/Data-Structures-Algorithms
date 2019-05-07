@@ -11,6 +11,18 @@ class DoublyLinkedLists{
         this.tail=null;
         this.length=0;
     }
+    push(){
+        let newNode=new Node;
+        if(!this.head){
+            this.head=newNode;
+            this.tail=newNode;
+        }
+        else{
+
+        }
+        this.length++;
+        return this;
+    }
 }
 const newList= new DoublyLinkedLists;
 console.log(newList);
