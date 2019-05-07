@@ -31,7 +31,7 @@ class SinglyLinkedList{
                 this.head=null;
                 this.tail=null;
                 this.length--;
-                console.log(byebye);
+                // console.log(byebye);
                 return byebye;
             }
             if(current.next.next===null){
@@ -39,7 +39,7 @@ class SinglyLinkedList{
                 current.next=null;
                 this.tail=current;
                 this.length--;
-                console.log(byebye);
+                // console.log(byebye);
                 return byebye;
             }
             current=current.next;
@@ -50,8 +50,8 @@ let newList = new SinglyLinkedList();
 newList.push('Aro1o');
 newList.push('aroo2');
 newList.push('aroo3sdfdf');
-// newList.push('aroo5');
+newList.push('aroo5');
 newList.pop();
-newList.pop();
+// newList.pop();
 console.log(newList);
 // console.log(newList.head.next.next.next);

@@ -18,7 +18,7 @@ class SinglyLinkedList{
         if(this.head===null){
             this.head=newNode;
             this.tail=newNode;}
-        this.length ++
+        this.length ++;
         return this;
     }
     reverse(){
@@ -32,7 +32,6 @@ class SinglyLinkedList{
         let holder3;
         for(let i=0; i<this.length; i++){
             holder1=holder2;
-            this.head.next=holder1;
             holder2=holder2.next;
         }
         this.head=holder3;
