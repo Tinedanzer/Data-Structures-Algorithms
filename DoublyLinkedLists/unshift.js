@@ -20,17 +20,18 @@ class DoublyLinkedLists{
     unshift(val){
         let newNode=new Node(val);
         if(this.length===0){this.length++;this.head=newNode;this.tail=newNode;return this}
-        let aroo=this.head;
+        // let aroo=this.head;
         this.head.prev=newNode;
+        newNode.next=this.head;
         this.head=newNode;
-        this.head.next=aroo;
+        // this.head.next=aroo;
         this.length++;
         return this;
     }
 }
 const newList= new DoublyLinkedLists;
-// newList.push('Aro1o');
-// newList.push('aroo2');
+newList.push('Aro1o');
+newList.push('aroo2');
 // newList.push('aroo3sdfdf');
 // newList.push('aroo4zz');
 newList.unshift('mr.hanky');
