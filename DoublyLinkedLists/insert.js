@@ -43,5 +43,5 @@ newList.push('Aro1o');
 newList.push('aroo2');
 newList.push('aroo3sdfdf');
 newList.push('aroo4zz');
-newList.insert('oogaboogado',0);
+newList.insert('oogaboogado',3);
 console.log(newList);
