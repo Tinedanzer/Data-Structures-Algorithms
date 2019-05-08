@@ -19,6 +19,7 @@ class DoublyLinkedLists{
         return this;}
     unshift(val){
         let newNode=new Node(val);
+        if(this.length===0){this.length++;this.head=newNode;this.tail=newNode;return this}
         let aroo=this.head;
         this.head.prev=newNode;
         this.head=newNode;
@@ -28,9 +29,9 @@ class DoublyLinkedLists{
     }
 }
 const newList= new DoublyLinkedLists;
-newList.push('Aro1o');
-newList.push('aroo2');
-newList.push('aroo3sdfdf');
+// newList.push('Aro1o');
+// newList.push('aroo2');
+// newList.push('aroo3sdfdf');
 // newList.push('aroo4zz');
 newList.unshift('mr.hanky');
-console.log(newList);
+console.log(newList );
