@@ -31,9 +31,8 @@ class DoublyLinkedLists{
     remove(i){
         let aroo=this.get(i);
         if(!aroo){console.log('arooooo'); return undefined}
-        if (this.length===1){this.shift(); return aroo}
-        if(this.length===i+1){this.pop(); return aroo}
         if(i===0){this.shift();return aroo}
+        if(this.length===i+1){this.pop(); return aroo}
             // console.log(aroo.prev.next);
         aroo.next.prev=aroo.prev;
         aroo.prev.next=aroo.next;
