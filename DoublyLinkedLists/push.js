@@ -29,6 +29,6 @@ class DoublyLinkedLists{
 const newList= new DoublyLinkedLists;
 newList.push('Aro1o');
 newList.push('aroo2');
-newList.push('aroo3sdfdf');
-newList.push('aroo4zz');
-console.log(newList.head.next.prev.next.prev.next);
+// newList.push('aroo3sdfdf');
+// newList.push('aroo4zz');
+console.log(newList);
