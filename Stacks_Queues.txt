@@ -1,4 +1,4 @@
-not going to bother writing code for this... very  simple concepts LIFO /LIFO;
+not going to bother writing code for this... very  simple concepts LIFO /FIFO;
 
 Stacks: LIFO
 
