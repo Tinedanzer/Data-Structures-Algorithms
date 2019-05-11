@@ -1,0 +1,19 @@
+not going to bother writing code for this... very  simple concepts LIFO /LIFO;
+
+Stacks: LIFO
+
+use an array:            if you dont care about built in methods and only for pop/push at the end;
+**use a singly linked:      lists if u need to shift/unshift to activate the 'last' inputted;
+doubly linked lists:     if u need to push/pop and shift/unshift
+
+----------------------------------------------------------------------------------------------
+Queues: FIFO
+
+arrays: heh, dont use  it! cause slow; u know
+
+**singly linked lists:      O(1); best to use;
+Terminology: 'inqueue()' and  'dequeue()' are used instead of push() and shift() respectively;
+
+doubly linked lists: just takes up more space; singly is the way to go^
+
+**usually best way to go for stacks/queues.

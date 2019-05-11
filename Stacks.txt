@@ -1,6 +1,0 @@
-not going to bother writing code for this... very  simple concept LIFO;
-
-use an array if you dont care about built in methods and only for pop/push at the end;
-
-use a singly linked lists if u need to shift/unshift
-doubly linked lists if u need to push/pop and shift/unshift
