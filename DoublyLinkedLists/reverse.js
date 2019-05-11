@@ -36,6 +36,9 @@ class DoublyLinkedLists{
         let previous=null;
         this.head=this.tail;
         this.tail=aroo; 
+//so we just set this.head to last item's node sequence
+//this code works from the new this.head but uses the value of the original this.head to start the code change
+// while it links the chains from index 0 to 1 to 2 to 3 until it reaches the new this.head
         for(let i=0; i<this.length; i++){
             console.log('separator.....................................')
             aroo.next=previous; //sets the .next to previous
