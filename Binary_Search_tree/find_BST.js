@@ -30,19 +30,18 @@ class BST{
                 else pewpew=pewpew.right;
             }}}
     find(num){
+        let pewpew=this.root;
         while(1){
-            if(num===pewpew.value)return undefined;
+            if(num===pewpew.value)return true;
             if(num<pewpew.value){
                 if(pewpew.left===null){
-                    pewpew.left=newNode;
-                    return this;
+                    return false;
                 }
                 else pewpew=pewpew.left;
             }
             else{
                 if(pewpew.right===null){
-                    pewpew.right=newNode;
-                    return this;
+                    return false;
                 }
                 else pewpew=pewpew.right;
             }
@@ -56,4 +55,4 @@ aroo.insert(13);
 aroo.insert(20);
 aroo.insert(0);
 aroo.insert(-5);
-console.log(aroo.root);
+console.log(aroo.find(20));
