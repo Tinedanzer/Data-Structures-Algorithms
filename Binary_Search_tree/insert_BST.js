@@ -30,7 +30,6 @@ class BST{
                 else pewpew=pewpew.right;
             }
         }
-    return this;
     }
 }
 let aroo= new BST();
