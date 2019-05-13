@@ -30,6 +30,7 @@ class BST{
                 else pewpew=pewpew.right;
             }}}
     find(num){
+        if(this.root===null)return false;
         let pewpew=this.root;
         while(1){
             if(num===pewpew.value)return true;
