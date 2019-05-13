@@ -33,7 +33,7 @@ class BST{
         if(this.root===null)return false;
         let pewpew=this.root;
         while(1){
-            if(num===pewpew.value)return true;
+            if(num===pewpew.value)return pewpew;
             if(num<pewpew.value){
                 if(pewpew.left===null){
                     return false;
@@ -52,8 +52,9 @@ class BST{
 let aroo= new BST();
 aroo.insert(10);
 aroo.insert(5);
+aroo.insert(6);
 aroo.insert(13);
 aroo.insert(20);
 aroo.insert(0);
 aroo.insert(-5);
-console.log(aroo.find(20));
+console.log(aroo.find(6));
