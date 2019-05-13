@@ -34,6 +34,7 @@ class BST{
 }
 let aroo= new BST();
 aroo.insert(10);
+aroo.insert(10);
 aroo.insert(5);
 aroo.insert(13);
 aroo.insert(13);
