@@ -33,7 +33,16 @@ class BST{
             }
         }
     }
-
+    depthFirstSearch(){
+        let complete=[];
+        let queue=[];
+        let current=this.root;
+        complete.push(current.value);
+        function helperFunc(current){
+            if(current===null)return;
+        }
+        if(current.left){}
+    }
 }
 let aroo= new BST();
 aroo.insert(10);
