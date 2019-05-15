@@ -1,3 +1,8 @@
+// These Searches work on all 'binary trees', (not just binary search trees(ordered))
+// and code can be manipulated to fit other types of trees.
+// Breadth first search: stores all data on each horizontal stack, starting from the root,
+// before moving on to the next horizontal stack underneath.
+
 class Node{
     constructor(val){
         this.value=val;
