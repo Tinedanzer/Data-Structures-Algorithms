@@ -9,15 +9,17 @@ class MaxBinaryHeap{
     }
     insert(value){
         this.values.push(value);
-        if(this.values.length===1)return;
+        if(this.values.length===1)return this;
         this.bubble(value);
     }
     bubble(value){
         let parent=this.values[Math.floor((this.values.indexOf(value)-1)/2)]
         console.log(parent);
         while(value>parent){
-            return;
+            // swap index of value with parent, then update parent; then good game.
+            return //remove return
         }
+        return this;
     }
 }
 let arooMan=new MaxBinaryHeap();
