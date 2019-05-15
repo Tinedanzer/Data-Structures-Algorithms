@@ -1,3 +1,12 @@
+// **************use breadth search when traversing down a tree similar to a singly linked list
+//b/c memory stored in the queue will be less than a 'Depth Search', due to the space complex with recursion.
+
+// Space complexity when the tree has many children etc etc, then it's better to use DEPTH FIRST
+// due to when BREADTH gets further down a fully filled out binary heap tree, the space becomes high
+// compared to recursion *******
+// THEN if a tree is big and similar to a binary heap, use logic to figure  out which 
+// DEPTH FIRST SEARCH should be done**********************
+
 // These Searches work on all 'binary trees', (not just binary search trees(ordered))
 // and code can be manipulated to fit other types of trees.
 // Breadth first search: stores all data on each horizontal stack, starting from the root,

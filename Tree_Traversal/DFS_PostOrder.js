@@ -1,3 +1,12 @@
+// **************use breadth search when traversing down a tree similar to a singly linked list
+//b/c memory stored in the queue will be less than a 'Depth Search', due to the space complex with recursion.
+
+// Space complexity when the tree has many children etc etc, then it's better to use DEPTH FIRST
+// due to when BREADTH gets further down a fully filled out binary heap tree, the space becomes high
+// compared to recursion *******
+// THEN if a tree is big and similar to a binary heap, use logic to figure  out which 
+// DEPTH FIRST SEARCH should be done**********************
+
 //Depth First Search. POSTORDER: Traverses down nodes on left side, then adds the value of the
 // left most child on the left, then the right; then its parent; 
 // THEN traverse down right side and add the children, then parent.

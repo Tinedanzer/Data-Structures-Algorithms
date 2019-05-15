@@ -1,3 +1,12 @@
+// **************use breadth search when traversing down a tree similar to a singly linked list
+//b/c memory stored in the queue will be less than a 'Depth Search', due to the space complex with recursion.
+
+// Space complexity when the tree has many children etc etc, then it's better to use DEPTH FIRST
+// due to when BREADTH gets further down a fully filled out binary heap tree, the space becomes high
+// compared to recursion *******
+// THEN if a tree is big and similar to a binary heap, use logic to figure  out which 
+// DEPTH FIRST SEARCH should be done**********************
+
 //Depth First Search. InORDER: For inOrder, we push the left value at the very end of the recursiveness,
 // then we Visit the parent node and all the right children from that node(and their left branches);
 // THEN we go to that parent, record it , then record all  the right children as we traverse down.
