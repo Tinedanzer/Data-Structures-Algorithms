@@ -37,7 +37,6 @@ class BST{
     }
     postOrder(){
         let complete=[];
-        let current=this.root;
 //recursive; the node.lefts.lefts.lefts stack on each other to traverse as the functon keeps
 //getting called. The base case happens when .left||.right calls null into the function.
 // For PostOrder, we push the value at the very end of the recursiveness, not the start;
@@ -47,7 +46,7 @@ class BST{
             if(node.right)helperFunc(node.right);
             complete.push(node.value);
         }
-        helperFunc(current);
+        helperFunc(this.root);
         return complete;
     }
 }
