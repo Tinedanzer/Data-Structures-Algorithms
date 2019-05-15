@@ -13,9 +13,9 @@ class MaxBinaryHeap{
         this.bubble(value);
     }
     bubble(value){
-        let parent=this.values[Math.floor((this.values.indexOf(value)-1)/2)]
-        console.log(parent);
-        while(value>parent){
+        let parentIndex=Math.floor((this.values.indexOf(value)-1)/2)
+        console.log(parentIndex);
+        while(value>this.values[parentIndex]){
             // swap index of value with parent, then update parent; then good game.
             return //remove return
         }
