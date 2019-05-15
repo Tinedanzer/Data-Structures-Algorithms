@@ -9,8 +9,24 @@ class MaxBinaryHeap{
     }
     insert(value){
         this.values.push(value);
+        if(this.values.length===1)return;
+        this.bubble(value);
+    }
+    bubble(value){
+        let parent=this.values[Math.floor((this.values.indexOf(value)-1)/2)]
+        console.log(parent);
+        while(value>parent){
+            return;
+        }
     }
 }
 let arooMan=new MaxBinaryHeap();
+arooMan.insert(5);
+arooMan.insert(95);
+arooMan.insert(10);
+arooMan.insert(13);
+arooMan.insert(42);
+arooMan.insert(65);
+arooMan.insert(50);
 arooMan.insert(100);
 console.log(arooMan);
