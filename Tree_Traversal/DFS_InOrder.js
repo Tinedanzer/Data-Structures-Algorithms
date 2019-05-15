@@ -1,7 +1,7 @@
-//Depth First Search. InORDER: Traverses down nodes on left side, then adds the value of the
-// left most child on the left, then the right; then its parent; 
-// THEN traverse down right side and add the children, then parent.
-// LASTLY you visit the .root and add that value in;
+//Depth First Search. InORDER: For inOrder, we push the left value at the very end of the recursiveness,
+// then we Visit the parent node and all the right children from that node(and their left branches);
+// THEN we go to that parent, record it , then record all  the right children as we traverse down.
+// note that when we visit the right side it records the top most node first, OPPOSITE of the left side.
 class Node{
     constructor(val){
         this.value=val;
@@ -39,12 +39,11 @@ class BST{
         let complete=[];
 //recursive; the node.lefts.lefts.lefts stack on each other to traverse as the functon keeps
 //getting called. The base case happens when .left||.right calls null into the function.
-// For PostOrder, we push the value at the very end of the recursiveness, not the start;
-// this is how we get children.
+
         function helperFunc(node){
             if(node.left)helperFunc(node.left);
-            if(node.right)helperFunc(node.right);
             complete.push(node.value);
+            if(node.right)helperFunc(node.right);
         }
         helperFunc(this.root);
         return complete;

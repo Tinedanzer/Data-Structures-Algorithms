@@ -1,5 +1,7 @@
-//Depth First Search. PRORDER: Visits all nodes on left side, and left side nodes' left side, before
-// going back up and traversing all right sides starting at the youngest child on the left.
+//Depth First Search. PRORDER: 
+// STARTS with a visit to root.node;  then records its immediate left child  and so forth until null;
+// then works back up and visits right children, recording parents first****** before children.
+// EXAMPLE: [10,5,0,7,6,8,13,20] from below
 class Node{
     constructor(val){
         this.value=val;
