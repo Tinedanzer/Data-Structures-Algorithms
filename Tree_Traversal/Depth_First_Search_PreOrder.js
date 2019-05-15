@@ -35,13 +35,20 @@ class BST{
     }
     depthFirstSearch(){
         let complete=[];
-        let queue=[];
         let current=this.root;
-        complete.push(current.value);
-        function helperFunc(current){
+//recursiove; the node.lefts.lefts.lefts stack on each other to traverse as the functon keeps getting called.
+        function helperFunc(node){
+            complete.push(node.value);
+            if(node.left){
+                helperFunc(node.left);
+            }
+            if(node.right){
+                helperFunc(node.right);
+            }
             if(current===null)return;
         }
-        if(current.left){}
+        helperFunc(current);
+        return complete;
     }
 }
 let aroo= new BST();
@@ -50,4 +57,7 @@ aroo.insert(5);
 aroo.insert(13);
 aroo.insert(20);
 aroo.insert(0);
+aroo.insert(7);
+aroo.insert(8);
 aroo.insert(6);
+console.log(aroo.depthFirstSearch());
