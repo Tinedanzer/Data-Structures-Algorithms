@@ -1,5 +1,5 @@
-//Depth First Search: Visits all nodes on left side, and left side nodes' left side, before
-// going back up and traversing all right sides starting at the youngest child.
+//Depth First Search. PRORDER: Visits all nodes on left side, and left side nodes' left side, before
+// going back up and traversing all right sides starting at the youngest child on the left.
 class Node{
     constructor(val){
         this.value=val;
@@ -33,10 +33,11 @@ class BST{
             }
         }
     }
-    depthFirstSearch(){
+    preOrder(){
         let complete=[];
         let current=this.root;
-//recursiove; the node.lefts.lefts.lefts stack on each other to traverse as the functon keeps getting called.
+//recursive; the node.lefts.lefts.lefts stack on each other to traverse as the functon keeps
+//getting called. The base case happens when .left||.right calls null into the function.
         function helperFunc(node){
             complete.push(node.value);
             if(node.left)helperFunc(node.left);
@@ -55,4 +56,4 @@ aroo.insert(0);
 aroo.insert(7);
 aroo.insert(8);
 aroo.insert(6);
-console.log(aroo.depthFirstSearch());
+console.log(aroo.preOrder());
