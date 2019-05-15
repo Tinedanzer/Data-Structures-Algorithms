@@ -39,13 +39,8 @@ class BST{
 //recursiove; the node.lefts.lefts.lefts stack on each other to traverse as the functon keeps getting called.
         function helperFunc(node){
             complete.push(node.value);
-            if(node.left){
-                helperFunc(node.left);
-            }
-            if(node.right){
-                helperFunc(node.right);
-            }
-            if(current===null)return;
+            if(node.left)helperFunc(node.left);
+            if(node.right)helperFunc(node.right);
         }
         helperFunc(current);
         return complete;
