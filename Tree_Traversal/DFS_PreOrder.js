@@ -10,7 +10,8 @@
 //Depth First Search. PRORDER: 
 // STARTS with a visit to root.node;  then records its immediate left child  and so forth until null;
 // then works back up and visits right children, recording parents first****** before children.
-// EXAMPLE: [10,5,0,7,6,8,13,20] from below
+
+//******* */EXAMPLE: [10,5,0,7,6,8,13,20] from below; *freezes* the tree to be recreated later********
 class Node{
     constructor(val){
         this.value=val;

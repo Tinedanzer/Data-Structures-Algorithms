@@ -11,6 +11,8 @@
 // then we Visit the parent node and all the right children from that node(and their left branches);
 // THEN we go to that parent, record it , then record all  the right children as we traverse down.
 // note that when we visit the right side it records the top most node first, OPPOSITE of the left side.
+
+// ******* Returns the values 'in order' as long as DFS_inOrder is used on a 'binary search tree'*******
 class Node{
     constructor(val){
         this.value=val;
