@@ -13,12 +13,18 @@ class MaxBinaryHeap{
         this.bubble(value);
     }
     bubble(value){
-        let parentIndex=Math.floor((this.values.indexOf(value)-1)/2)
+//finding last index with this.values.length-1; then applying formula to find parentIndex;.floor(n-1)/2
         let currentIndex=this.values.length -1;
+        let parentIndex=Math.floor(((currentIndex-1)/2))
         console.log(parentIndex);
         while(value>this.values[parentIndex]){
             // swap index of value with parent, then update parent; then good game.
-            return //remove return
+            // do the same with temp  indexes as you did w/ the values;
+            let temp=this.values[parentIndex];
+            this.values[parentIndex]=this.values[currentIndex];
+            this.values[currentIndex]=temp;
+            currentIndex=parentIndex;
+            parentIndex=Math.floor(((currentIndex-1)/2));
         }
         return this;
     }
@@ -32,4 +38,5 @@ arooMan.insert(42);
 arooMan.insert(65);
 arooMan.insert(50);
 arooMan.insert(100);
+arooMan.insert(43);
 console.log(arooMan);
