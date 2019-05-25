@@ -4,7 +4,7 @@
 // to find a Parent node from a child use .floor((n-1)/2)
 class MaxBinaryHeap{
     constructor(){
-        this.values=[ 100, 73, 66, 45, 58, 41, 55, 37, 24 ];
+        this.values=[ 55, 45, 41, 37, 24 ];
     }
     removeMax(){
 // setting root(100) to the last array value(now is 42 root); and then removing last value(42)
@@ -23,9 +23,12 @@ class MaxBinaryHeap{
         let right=2*indx+2;
 // checking that the left or right index exists in order to continue while loop.
         while(left<this.values.length||right<this.values.length){
+// HOWEVER***** left could exist while right doesnt and vice versa;;; so below I USE:
+// right>=this.values.length ; if right doesnt 'exist' left side still runs; same for right;
+// this allows us to fully traverse one side of the tree, even if one child is empty;**********
 // checks if parent is greater than both children; if true; returns and exits;
             if(parent>this.values[left] && parent>this.values[right]) return;
-            if(this.values[left]>this.values[right]){
+            if(this.values[left]>this.values[right] || right>=this.values.length){
 // if left node is greater than parent, we are finding them by index and swapping them;
 // keeping 'parent' as the temporary variable as we traverse the tree.
 // constantly updating and checking index,left, right to talk to the right head/children as we traverse.
