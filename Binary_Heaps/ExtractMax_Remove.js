@@ -9,6 +9,7 @@ class MaxBinaryHeap{
     removeMax(){
 // setting root(100) to the last array value(now is 42 root); and then removing last value(42)
         if(this.values.length===0)return null;
+        if(this.values.length===1)return this.values.pop();
         const final= this.values[0];
         this.values[0]=this.values.pop();
         this.sinkDown();
