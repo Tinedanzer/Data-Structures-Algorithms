@@ -1,3 +1,5 @@
+// all values to the left of the root node must be  less than root; all values to the right
+// must be greater than the root.
 class Node{
     constructor(val){
         this.value=val;
