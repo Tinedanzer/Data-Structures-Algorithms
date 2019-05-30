@@ -4,7 +4,7 @@
 // to find a Parent node from a child use .floor((n-1)/2)
 class MaxBinaryHeap{
     constructor(){
-        this.values=[ 55, 45, 41, 37, 24 ];
+        this.values=[ 100, 82, 85, 24, 18, 45, 81, 12, 5, 8, 17 ];
     }
     removeMax(){
 // setting root(100) to the last array value(now is 42 root); and then removing last value(42)
@@ -53,4 +53,7 @@ class MaxBinaryHeap{
     }
 }
 let aroo=new MaxBinaryHeap;
+console.log(aroo.removeMax());
+console.log(aroo.removeMax());
+console.log(aroo.removeMax());
 console.log(aroo.removeMax());
