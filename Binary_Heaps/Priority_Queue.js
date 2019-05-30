@@ -34,13 +34,15 @@ class PriorityQueue{
 // checking to see if parentIndex exists;  if it does, assign x the new x priority and continue
 // if it doesnt, assign x to the currentindex and have currentIndex compared to currentIndex to
 // stop the loop;  without this, code would eventually return undefined for a node due to a -1 index.
+// due to currentIndex potentially going to -0.5 and floored to -1 index.
+// could have swapped while loop to (currentindex>0) as well to be simple:P 
 this.values[parentIndex] ? x=this.values[parentIndex].priority : x=this.values[currentIndex].priority;
         }
         return this;
     }
-// *********** starting of ExtractMax/ExtractMin(take out root) function; *******
-        removeMax(){
-// setting root(100) to the last array value(now is 42 root); and then removing last value(42)
+// *********** starting of ExtractMax/ExtractMin(take out root)/dequeue function; *******
+    dequeue(){
+// setting root priority(0) to the last array value(5 root); and then removing last value(0 former root)
         if(this.values.length===0)return null;
         if(this.values.length===1)return this.values.pop();
         const final= this.values[0];
@@ -52,17 +54,20 @@ this.values[parentIndex] ? x=this.values[parentIndex].priority : x=this.values[c
 // sinking new root down(swapping children) until it finds its rightful place.
     sinkDown(){
         let indx=0;
-        let parent=this.values[indx];
+        let parent=this.values[0];
         let left=2*indx+1;
         let right=2*indx+2;
 // checking that the left or right index exists in order to continue while loop.
         while(left<this.values.length||right<this.values.length){
+        console.log(indx);
+        console.log(this.values[indx]);
 // HOWEVER***** left could exist while right doesnt and vice versa;;; so below I USE:
 // right>=this.values.length ; if right doesnt 'exist' left side still runs; same for right;
 // this allows us to fully traverse one side of the tree, even if one child is empty;**********
 // checks if parent is greater than both children; if true; returns and exits;
-            if(parent>this.values[left] && parent>this.values[right]) return;
-            if(this.values[left]>this.values[right] || right>=this.values.length){
+            if(!this.values[right])return;
+                if(parent.priority<=this.values[left].priority && parent.priority<=this.values[right].priority) return;
+    try{    if(this.values[left].priority<this.values[right].priority || right>=this.values.length){
 // if left node is greater than parent, we are finding them by index and swapping them;
 // keeping 'parent' as the temporary variable as we traverse the tree.
 // constantly updating and checking index,left, right to talk to the right head/children as we traverse.
@@ -83,19 +88,31 @@ this.values[parentIndex] ? x=this.values[parentIndex].priority : x=this.values[c
                 right=2*indx+2;
             }
         }
+            finally{
+                this.values[indx]=this.values[left];
+                        this.values[left]=parent;
+                        parent=this.values[left];
+                        indx=left;
+                        left=2*indx+1;
+                        right=2*indx+2;
+            };
+        }
     }
 }
 let arooMan=new PriorityQueue();
 arooMan.insert(5,2);
 arooMan.insert(95,0);
-arooMan.insert(10,1);
+arooMan.insert(10,0);
 arooMan.insert(13,3);
 arooMan.insert(42,2);
-arooMan.insert(65,4);
-// arooMan.insert(50,2);
-// arooMan.insert(100,5);
-// arooMan.insert(43,0);
-// arooMan.insert(26,0);
-// arooMan.insert(28,5);
+arooMan.insert(50,1);
+arooMan.insert(65,0);
+arooMan.insert(100,0);
+arooMan.insert(43,0);
+arooMan.insert(26,0);
+arooMan.insert(28,5);
+arooMan.dequeue();
+arooMan.dequeue();
+arooMan.dequeue();
 
 console.log(arooMan.values);
