@@ -113,7 +113,7 @@ this.values[parentIndex] ? x=this.values[parentIndex].priority : x=this.values[c
 // using ternary operators to check if left/right exsists.
             if(this.values[parentIndx].priority>this.values[left] ? this.values[left].priority : Infinity || 
                 this.values[parentIndx].priority>this.values[right].priority){
-                    // this.values[left] ? this.values[left].priority : 1000 
+                    // this.values[left] ? this.values[left].priority : Infinity 
                 if(!this.values[right] || this.values[left].priority < this.values[right].priority){
                     if(!this.values[left]&&!this.values[right])break;
                     let temp=this.values[parentIndx];
