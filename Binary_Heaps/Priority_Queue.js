@@ -42,7 +42,7 @@ this.values[parentIndex] ? x=this.values[parentIndex].priority : x=this.values[c
     }
 // *********** starting of ExtractMax/ExtractMin(take out root)/dequeue function; *******
 // skip to working dequeue2 code;;; dequeue1 missing same 'if' check statement that dequeue2 has.
-// leaving all code, even bad.
+// leaving all code, even bad. solved the problem below!!! missing a simple () on one side of ><
     dequeue(){
 // setting root priority(0) to the last array value(5 root); and then removing last value(0 former root)
         if(this.values.length===0)return null;
@@ -104,19 +104,23 @@ this.values[parentIndex] ? x=this.values[parentIndex].priority : x=this.values[c
 // niceee flawless, other than some edge cases
     dequeue2(){
         let final=this.values[0];
+        if(this.values.length<=0)return undefined;
         if(this.values.length===1)return this.values.pop();
         this.values[0]=this.values.pop();
         let parentIndx=0;
         let left=1;
         let right=2;
+        let temp;
         while(1){
 // using ternary operators to check if left/right exsists.
-            if(this.values[parentIndx].priority>this.values[left] ? this.values[left].priority : Infinity || 
-                this.values[parentIndx].priority>this.values[right].priority){
+// WOW****IMPORTANT* NEEDED PARENTHESIS AROUND THE >< SIGNS, TO CARRY OUT TERNARY CHECK FIRST.
+// YAYYY
+            if(this.values[parentIndx].priority>(this.values[left] ? this.values[left].priority:Infinity)
+            ||this.values[parentIndx].priority>(this.values[right]?this.values[right].priority:Infinity)){
                     // this.values[left] ? this.values[left].priority : Infinity 
                 if(!this.values[right] || this.values[left].priority < this.values[right].priority){
                     if(!this.values[left]&&!this.values[right])break;
-                    let temp=this.values[parentIndx];
+                    temp=this.values[parentIndx];
                     this.values[parentIndx]=this.values[left];
                     this.values[left]=temp;
                     parentIndx=left;
@@ -125,7 +129,7 @@ this.values[parentIndex] ? x=this.values[parentIndex].priority : x=this.values[c
                 }
                 else{
                     if(!this.values[left]&&!this.values[right])break;
-                    let temp=this.values[parentIndx];
+                    temp=this.values[parentIndx];
                     this.values[parentIndx]=this.values[right];
                     this.values[right]=temp;
                     parentIndx=right;
@@ -141,15 +145,15 @@ this.values[parentIndex] ? x=this.values[parentIndex].priority : x=this.values[c
 let arooMan=new PriorityQueue();
 arooMan.insert(5,2);
 arooMan.insert(95,0);
-// arooMan.insert(10,0);
+arooMan.insert(10,0);
 arooMan.insert(13,3);
-// arooMan.insert(42,2);
-// arooMan.insert(50,1);
-// arooMan.insert(65,0);
-// arooMan.insert(100,0);
-arooMan.insert(43,0);
-// arooMan.insert(26,0);
-arooMan.insert(28,5);
+arooMan.insert(42,2);
+arooMan.insert(50,1);
+arooMan.insert(65,0);
+arooMan.insert(100,0);
+// arooMan.insert(43,0);
+arooMan.insert(26,0);
+// arooMan.insert(28,5);
 arooMan.dequeue2();
 arooMan.dequeue2();
 arooMan.dequeue2();
