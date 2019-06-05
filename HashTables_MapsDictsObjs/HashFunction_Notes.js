@@ -1,6 +1,5 @@
 // very simple hash function that works on strings only;
-// not constant time====== bad... not super random; and '!,?' etc wont work
-function has(key, arrayLen){
+function hash(key, arrayLen){
     let total=0;
     // primes add more security and decreases possible collisions
     // ALSO, arraylength size being a PRIME length greatly decreases odds of collisions.
@@ -21,4 +20,4 @@ function has(key, arrayLen){
 }
 
 // using a prime # array length.
-console.log(has('Arooz!',19))
+console.log(hash('Arooz!',19))
