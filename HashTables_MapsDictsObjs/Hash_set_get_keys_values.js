@@ -12,7 +12,7 @@ class HashTable{
             total=(total+crazy_prime+value)% this.keyMap.length;
         }
     // console.log(total +' index number');
-    return total;
+        return total;
     }
     set(key,val){
         let holder= this._hash(key)
@@ -39,7 +39,7 @@ class HashTable{
         for (let i = 0; i < this.keyMap.length; i++) {
             if(this.keyMap[i]){
                 for (let x=0; x< this.keyMap[i].length; x++){
-//pew pew, targets keys in the array within the array #inception; #thisisallanObjectWithinAnOBJECT
+//pew pew, targets keys in the array within the array #inception; #thisisallanObjectWithinAnOBJECT.etc
                     arr.push(this.keyMap[i][x][0])
                 }
             }   
@@ -52,7 +52,9 @@ class HashTable{
         for (let i = 0; i < this.keyMap.length; i++) {
             if(this.keyMap[i]){
                 for (let x=0; x< this.keyMap[i].length; x++){
-                    arr.push(this.keyMap[i][x][1])
+                    if(!arr.includes(this.keyMap[i][x][1])){
+                        arr.push(this.keyMap[i][x][1])
+                    }
                 }
             }   
         }
@@ -65,6 +67,7 @@ aroo.set('red','#12333');
 aroo.set('redaawwww','#993ww33');
 aroo.set('redwwwr!!!we','aa3');
 aroo.set('aroo3','SURPRISEbunnyATTACK');
+aroo.set('aroaasdo3','SURPRISEbunnyATTACK');
 // console.log(aroo.keyMap[14][0])
 // aroo._hash('!arookwwwado');
 // aroo.get('redwwwr!!!we');
