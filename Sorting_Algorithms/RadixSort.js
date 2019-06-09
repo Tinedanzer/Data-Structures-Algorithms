@@ -50,6 +50,7 @@ function finalFunction(arr){
     count2++
 }
 benchmark.shift();
+// benchmarking for fun, reduce is taking the average of the benchmark array and returning seconds.
 console.log(benchmark.reduce((a,b) => a + b, 0)/100000)
     return arr;
 }
