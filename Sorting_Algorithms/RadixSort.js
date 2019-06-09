@@ -31,8 +31,8 @@ function finalFunction(arr){
         if(t1 !==0) {
             t2=t1;
         }
-        t1=Date.now()/1000;
-        let avg=t1-t2;
+    t1=Date.now()/1000;
+    let avg=t1-t2;
     for (let i = 0; i < count; i++) {
         // create an empty array digitbucket length of 10(0-9 digits)
         let digitBuckets= Array.from({length:10}, ()=>[]);
