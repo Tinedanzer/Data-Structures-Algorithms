@@ -11,18 +11,11 @@ function quickIndx(arr, start=0, end= arr.length-1){
     let pivotIndx=start;
     for(let i=start+1; i<arr.length; i++){
         if(arr[i]<arr[pivotIndx]){
-            countSwapIndx++
+            countSwapIndx++;
             swap(arr,i,countSwapIndx)
-            // let temp=arr[i];
-            // arr[i]=arr[countSwapIndx];
-            // arr[countSwapIndx]=temp;
         }
     }
     swap(arr,pivotIndx,countSwapIndx);
-    // let temp=arr[pivotIndx];
-    // arr[pivotIndx]=arr[countSwapIndx];
-    // arr[countSwapIndx]=temp;
-    // return arr;
     return countSwapIndx;
 }
 function swap(array,i,j){
