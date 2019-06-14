@@ -58,7 +58,7 @@ aroo.addEdge('D','E')
 aroo.addEdge('D','F')
 aroo.addEdge('E','F')
 // aroo.removeEdge('A','B')
-console.log(aroo.depthFirstSearchRecursively('Fa'));
+console.log(aroo.depthFirstSearchRecursively('A'));
 // console.log(aroo);
 
 // version without notes
