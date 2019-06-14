@@ -15,6 +15,12 @@ class Graph{
         this.adjacencyList[vertex] = this.adjacencyList[vertex].filter(v=> v!==connect)
         this.adjacencyList[connect] = this.adjacencyList[connect].filter(v=> v!==vertex)
     }
+    removeVertex(vertex){
+        for(let x of this.adjacencyList[vertex]){
+            this.removeEdge(vertex, x)
+        }
+        delete this.adjacencyList[vertex]
+    }
 // 'start' here is the starting point from which the graph is being DFS traversed.
     depthFirstSearchRecursively(start){
         let visited={}; 
