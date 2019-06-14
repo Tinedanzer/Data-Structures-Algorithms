@@ -22,6 +22,7 @@ class Graph{
        console.log(this.adjacencyList);        
     //    Start of Helper Recursion function
 //using an arrow func here otherwise 'this' will refer to the parent function above and NOT the class.
+
          const recursion=(vertex)=>{
             if(!vertex)return null;
 // sets a marker that we have visited this vertex
@@ -66,6 +67,7 @@ function depthFirstSearchRecursively(start){
     let visited={}; 
     let results=[];
    console.log(this.adjacencyList);
+
      const recursion=(vertex)=>{
         if(!vertex)return null;
         visited[vertex]=true;
