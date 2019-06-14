@@ -50,7 +50,7 @@ aroo.addVertex('B') //B
 aroo.addVertex('C')  //C
 aroo.addVertex('D')  // D
 aroo.addVertex('E') // E
-aroo.addVertex('F')        // F
+aroo.addVertex('F') // F
 aroo.addEdge('A','B')
 aroo.addEdge('A','C')
 aroo.addEdge('B','D')
